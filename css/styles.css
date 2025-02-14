@@ -17,11 +17,24 @@ body {
   animation: up 3s linear infinite;
 }
 
-@keyframes up {
+@-webkit-keyframes up {
   0%, 100% {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
   50% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes up {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-30px);
     transform: translateY(-30px);
   }
 }
@@ -210,8 +223,20 @@ body {
   background-color: rgba(0,0,0,0.3);
   top:265px;
   left:-15px;
-  animation: scale 3s linear infinite;
+  -webkit-animation: scale 3s linear infinite; /* Prefijo para Safari */
+          animation: scale 3s linear infinite;
   z-index:-1;
+}
+
+@-webkit-keyframes scale { /* Prefijo para Safari */
+  0%, 100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  50% {
+    -webkit-transform: scaleX(0.85);
+            transform: scaleX(0.85);
+  }
 }
 
 @keyframes scale {
