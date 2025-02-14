@@ -1,9 +1,6 @@
 body {
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-align-items: center;
   align-items: center;
   height: 100vh;
   background-color: #fae1dd;
@@ -56,8 +53,8 @@ body {
   position: absolute;
   width: 212px;
   height: 212px;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   top: -105px;
   left: 44px;
   border-radius: 30px 0 0 0;
@@ -70,8 +67,28 @@ body {
   height: 170px;
   top: 5px;
   left: 15px;
-  -webkit-box-shadow: -5px -5px 100px rgba(0,0,0,0.4);
-  box-shadow: -5px -5px 100px rgba(0,0,0,0.4);
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4); 
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #003049;
+  border-style: dotted;
+  width: 240px;
+  height: 140px;
+  left: 12px;
+  top: 12px;
+}
+
+.letter-text {
+  position: absolute;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 28px;
+  text-align: center;
+  line-height: 25px;
+  top: 19px;
+  color: #003049;
 }
 
 .heart {
@@ -82,9 +99,33 @@ body {
   position: relative;
   top: 110px;
   left: 105px;
-  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
   width: 30px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.hearts {
+  position: absolute;  
 }
 
 .one, .two, .three, .four, .five {
@@ -93,22 +134,42 @@ body {
   height: 10px;
   margin: 0 10px;
   position: relative;
-  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
   width: 10px;
   top: 50px;
 }
 
+.one:before,
+.one:after, .two:before, .two:after, .three:before, .three:after, .four:before, .four:after, .five:before, .five:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.one:before, .two:before, .three:before, .four:before, .five:before {
+  top: -5px;
+  left: 0;
+}
+
+.one:after, .two:after, .three:after, .four:after, .five:after {
+  left: 5px;
+  top: 0;
+}
+  
 .one {
   left: 10px;
-  -webkit-animation: heart 1s ease-out infinite;
-  animation: heart 1s ease-out infinite;
+  -webkit-animation: heart 1s ease-out infinite; 
+  animation: heart 1s ease-out infinite; 
 }
 
 .two {
   left: 30px;
-  -webkit-animation: heart 2s ease-out infinite;
-  animation: heart 2s ease-out infinite;
+  -webkit-animation: heart 2s ease-out infinite; 
+  animation: heart 2s ease-out infinite; 
 }
 
 .three {
@@ -155,12 +216,35 @@ body {
   }
 }
 
+.front {
+  position: absolute;
+  border-right: 180px solid #f4978e;
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #f8ad9d;
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
 .shadow {
   position: absolute;
   width: 330px;
   height: 25px;
   border-radius: 50%;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   top: 265px;
   left: -15px;
   -webkit-animation: scale 3s linear infinite;
